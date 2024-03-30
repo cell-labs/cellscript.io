@@ -1,0 +1,94 @@
+import TextLayout from "../components/TextLayout/TextLayout";
+
+import Slogan from '../assets/img/slogan.png'
+import WhiteBoard from '../assets/img/whiteboard.png'
+import GoImg from '../assets/img/go.png'
+import Test from '../assets/img/test.png'
+import ResultImg from '../assets/img/result.png'
+import ProcessImg from '../assets/img/process.png'
+import MarginContainer from "../components/MarignContainer/MarginContainer";
+
+# Hello Cell Script !
+
+<MarginContainer bottom={32} />
+
+Cell Script is a new designed statically-typed programming language for smart contracts running on UTXO-based chain CKB.
+
+<MarginContainer bottom={16} />
+
+By using Cell Script, any developer can start the jounery of CKB smart contracts in minutes. 
+
+<MarginContainer bottom={16} />
+
+More details about CKB, can be find [here]()
+
+<MarginContainer bottom={64} />
+
+# Example
+
+Here is a sample code used to express **xUDT** on CKB.
+
+```
+import "tx"
+import "cell"
+import "debug"
+
+function main() {
+
+  vector<cell> inputs = tx.inputs();
+  vector<cell> outputs = tx.outputs();
+  if(inputs.size() < outputs.size()) {
+    return false;
+  }
+
+  for(cell input: inputs) {
+    if(input.capacity < 100) {
+      return true;
+    }
+  }
+
+  if(tx.hasScript("script hash")) { 
+    debug.log("find the script hash in tx");
+  }
+
+  vector<vector<byte>> witness = tx.witness();
+  for(vector<byte> w: witness) {
+    debug.log("the witness data is", w);
+  }
+  
+  return true;
+}
+```
+
+<MarginContainer bottom={64} />
+
+# How to get started!
+
+<MarginContainer bottom={16} />
+
+Download the toolchain through the [link]()
+
+```bash
+download the package
+```
+
+Run the command to install.
+```bash
+install
+```
+
+<MarginContainer bottom={64} />
+
+# How to get involved!
+
+<MarginContainer bottom={16} />
+
+Cell Script is borned in a Hacker House hosted by [Rebase Community]() and [Nervos CKB](). Right now, it's quite young, and needs help from the community.
+
+<MarginContainer bottom={16} />
+
+If you are glad to contribute or get involved, please fire your issue or ideas in github repo. Here is the [repo](https://github.com/cell-labs/cell-script)
+
+
+<br/>
+<br/>
