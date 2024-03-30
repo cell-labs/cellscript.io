@@ -1,7 +1,5 @@
 import React from 'react';
-import Discord from '../../assets/img/discord.png'
 import Github from '../../assets/img/github.png'
-import Unknown from '../../assets/img/unknown.png'
 import Twitter from '../../assets/img/twitter.png'
 import './Footer.scss';
 
