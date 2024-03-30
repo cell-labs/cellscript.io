@@ -1,4 +1,4 @@
-name: Deploy to github page
+name: Deploy to GitHub page
 
 on:
   push:
@@ -23,8 +23,7 @@ jobs:
        run: npm install
      - name: Compile 
        run: export CI=false && npm run build
-       
-    
+      
      - name: Deploy to GitHub Pages
        if: success()
        uses: crazy-max/ghaction-github-pages@v3
