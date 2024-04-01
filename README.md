@@ -6,4 +6,4 @@ Here is the website for Cell Script, a smart contract programming language for U
 
 # Special thanks
 
-Thanks to [@SpectreMercury]((https://github.com/SpectreMercury) for his [contribution](https://github.com/SpectreMercury/ckb-tutorial/tree/develop)
+Thanks to [@SpectreMercury](https://github.com/SpectreMercury) for his [contribution](https://github.com/SpectreMercury/ckb-tutorial/tree/develop)
