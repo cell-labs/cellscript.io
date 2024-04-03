@@ -29,52 +29,113 @@ More details about CKB, can be find [here]()
 Here is a sample code used to express **xUDT** on CKB.
 
 ```
+import "debug"
 import "tx"
 import "cell"
-import "debug"
 
+// main is the entry point of every cell script
 function main() {
+    tx.scriptVerify()
 
-  vector<cell> inputs = tx.inputs();
-  vector<cell> outputs = tx.outputs();
-  if(inputs.size() < outputs.size()) {
-    return false;
-  }
-
-  for(cell input: inputs) {
-    if(input.capacity < 100) {
-      return true;
+    if(tx.isOwnerMode()) {
+        return 0
     }
-  }
+    
 
-  if(tx.hasScript("script hash")) { 
-    debug.log("find the script hash in tx");
-  }
+    var ins = tx.inputs()
+    var outs = tx.outputs()
 
-  vector<vector<byte>> witness = tx.witness();
-  for(vector<byte> w: witness) {
-    debug.log("the witness data is", w);
-  }
-  
-  return true;
+    var in_sum uint64
+    var out_sum uint64
+
+    for _, input := range ins {
+        in_sum += input
+        if in_sum < input {
+            debug.Printf("input overflow")
+            return 1
+        }
+    }
+
+    for _, output := range outs {
+        out_sum += output
+        if out_sum < output {
+            debug.Printf("output overflow")
+            return 1
+        }
+    }
+
+    if in_sum < out_sum {
+        debug.Printf("Invalid Amount")
+        return 1
+    }
+    
+    return 0
 }
 ```
 
 <MarginContainer bottom={64} />
 
-# How to get started!
+# How to get start from sourcecode
 
 <MarginContainer bottom={16} />
 
-Download the toolchain through the [link]()
+Install the packages following below commands
 
 ```bash
-download the package
+brew install go@1.22
+brew install antlr@4
+brew install openjdk@21
+brew install llvm@16
+brew tap riscv-software-src/riscv
+brew install riscv-tools
+export PATH=/opt/homebrew/bin:$PATH
+brew install --cask spike
 ```
 
-Run the command to install.
+Install **ckb-debugger** for furture debug
 ```bash
-install
+cargo install --git https://github.com/nervosnetwork/ckb-standalone-debugger ckb-debugger
+```
+
+Build the compiler by running below command
+
+```
+make build
+source install.sh
+```
+
+you will find the compiler **cell** in **output** folder. 
+
+Try to run the following comamnd
+```
+./output/cell
+```
+
+you will get below result
+
+```
+2024/04/04 00:41:49 No file specified. Usage: ./output/cell path/to/file.cell
+```
+
+It means you get the correct compiler. Next step, you need compile the contract with debug flag **-d**
+
+```
+./output/cell -d -t riscv tests/examples/helloworld.cell
+```
+
+Run the **ckb vm debugger** to test the program following below commands
+
+```bash
+ckb-debugger --bin helloworld
+```
+
+you will get the result like below 
+
+```
+hello world! 0
+Run result: 0
+Total cycles consumed: 8014(7.8K)
+Transfer cycles: 5094(5.0K), running cycles: 2920(2.9K)
 ```
 
 <MarginContainer bottom={64} />
