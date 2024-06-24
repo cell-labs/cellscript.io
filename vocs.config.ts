@@ -9,7 +9,18 @@ export default defineConfig({
     pattern: 'https://github.com/cell-labs/cellscript.io/edit/main/docs/pages/:path',
     text: 'Suggest changes to this page',
   },
-
+  iconUrl: {
+    light: '/cellscript-icon-dark.svg',
+    dark: '/cellscript-icon-dark.svg',
+  },
+  logoUrl: {
+    light: '/cellscript-logo-dark.svg',
+    dark: '/cellscript-logo-dark.svg',
+  },
+  ogImageUrl: {
+    '/': '/og.jpeg',
+    '/docs': '',
+  },
   rootDir: 'site',
   socials: [
     {
@@ -24,7 +35,7 @@ export default defineConfig({
   sidebar: [
     {
       text: 'Getting Started',
-      link: '/docs/getting-started',
+      link: '/docs/',
     },
     {
       text: 'Example',
@@ -32,19 +43,24 @@ export default defineConfig({
     },
   ],
   topNav: [
+    { text: 'Discuss', link: 'https://github.com/orgs/cell-labs/discussions' },
     { text: 'Docs', link: '/docs' },
     { text: 'Blog', link: '/blog' },
     {
-      text: version,
+      text: 'v' + version,
       items: [
         {
           text: 'Changelog',
-          link: 'https://github.com/cell-labs/cell-script/blob/main/src/CHANGELOG.md',
+          link: 'https://github.com/cell-labs/cell-script/blob/main/CHANGELOG.md',
         },
         {
-          text: 'Contributing',
-          link: 'https://github.com/cell-labs/cell-script/blob/main/.github/CONTRIBUTING.md',
+          text: 'Download',
+          link: 'https://github.com/cell-labs/cell-script/releases',
         },
+        // {
+        //   text: 'Contributing',
+        //   link: 'https://github.com/cell-labs/cell-script/blob/main/.github/CONTRIBUTING.md',
+        // },
       ],
     },
   ],
