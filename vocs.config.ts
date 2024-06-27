@@ -46,6 +46,7 @@ export default defineConfig({
     { text: 'Discuss', link: 'https://github.com/orgs/cell-labs/discussions' },
     { text: 'Docs', link: '/docs' },
     { text: 'Blog', link: '/blog' },
+    { text: 'Course', link: '/course' },
     {
       text: 'v' + version,
       items: [
