@@ -10,11 +10,11 @@ export default defineConfig({
     text: 'Suggest changes to this page',
   },
   iconUrl: {
-    light: '/cellscript-icon-dark.svg',
+    light: '/cellscript-icon-light.svg',
     dark: '/cellscript-icon-dark.svg',
   },
   logoUrl: {
-    light: '/cellscript-logo-dark.svg',
+    light: '/cellscript-logo-light.svg',
     dark: '/cellscript-logo-dark.svg',
   },
   ogImageUrl: {
