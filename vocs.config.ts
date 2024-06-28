@@ -6,7 +6,7 @@ export default defineConfig({
   title: 'Cell Script',
   description: 'Cell Script is a new designed statically-typed programming language for smart contracts running on UTXO-based chain CKB.',
   editLink: {
-    pattern: 'https://github.com/cell-labs/cellscript.io/edit/main/docs/pages/:path',
+    pattern: 'https://github.com/cell-labs/cellscript.io/edit/main/site/pages/:path',
     text: 'Suggest changes to this page',
   },
   iconUrl: {
