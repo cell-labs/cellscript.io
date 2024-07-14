@@ -28,6 +28,10 @@ export default defineConfig({
       link: 'https://discord.gg/djjDP8QtUu',
     },
     {
+      icon: 'telegram',
+      link: 'https://t.me/cellscript',
+    },
+    {
       icon: 'github',
       link: 'https://github.com/cell-labs/cell-script',
     },
