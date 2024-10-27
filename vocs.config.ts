@@ -36,21 +36,28 @@ export default defineConfig({
       link: 'https://github.com/cell-labs/cell-script',
     },
   ],
-  sidebar: [
+  sidebar: [ // side bar is for docs hierarchy
     {
       text: 'Getting Started',
       link: '/docs/',
     },
     {
-      text: 'Example',
-      link: '/docs/example',
+      text: 'Course',
+      link: '/docs/course',
     },
+    {
+      text: 'A Tour of CellScript',
+      link: '/docs/tour',
+    },
+    {
+      text: 'Standard Library',
+      link: '/docs/stdlib',
+    }
   ],
   topNav: [
-    { text: 'Discuss', link: 'https://github.com/orgs/cell-labs/discussions' },
     { text: 'Docs', link: '/docs' },
     { text: 'Blog', link: '/blog' },
-    { text: 'Course', link: '/course' },
+    { text: 'Discuss', link: 'https://github.com/orgs/cell-labs/discussions' },
     {
       text: 'v' + version,
       items: [
