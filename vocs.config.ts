@@ -38,12 +38,8 @@ export default defineConfig({
   ],
   sidebar: [ // side bar is for docs hierarchy
     {
-      text: 'Getting Started',
+      text: 'CellScript',
       link: '/docs/',
-    },
-    {
-      text: 'Course',
-      link: '/docs/course',
     },
     {
       text: 'A Tour of CellScript',

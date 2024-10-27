@@ -1,65 +1,18 @@
-# Getting Started
+# Installations
 
-## Overview
-
-Cell Script is a new designed statically-typed programming language for smart contracts running on UTXO-based chain CKB.
-
-By using Cell Script, any developer can start the jounery of CKB smart contracts in minutes.
-
-The Cell Script spec can be found [here](https://github.com/cell-labs/cell-script/blob/main/SPEC.md)
-
-More details about CKB, can be find [here](https://www.nervos.org/ckbpage)
-
-## Example
-
-```
-import "debug"
-import "tx"
-import "cell"
-
-func main() {
-    if tx.isOwnerMode() {
-        return 0
-    }
-
-    in_sum, out_sum := 0, 0
-    ins := tx.inputs()
-    if len(ins) == int32(0) {
-        return 1
-    }
-    for input := range tx.inputs() {
-        in_sum += input
-    }
-
-    for output := range tx.outputs() {
-        out_sum += output
-    }
-
-    if in_sum < out_sum {
-        debug.Printf("Invalid Amount")
-        return 1
-    }
-  
-    return 0
-}
-```
-
-## Quick Start
+## Build from source
 
 You can build the Cell Script Compiler from source code right now!
 
-### How to build (MacOS)
+### How to build (MacOS) and Install
 
 ```
 brew install go@1.22
-brew install antlr@4
-brew install openjdk@21
-brew install llvm@16
+brew install llvm@18
 brew tap riscv-software-src/riscv
 brew install riscv-tools
 export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/opt/llvm@16/bin:$PATH"
-brew install --cask spike
+export PATH="/opt/homebrew/opt/llvm@18/bin:$PATH"
 make build
 source install.sh
 ```
@@ -77,14 +30,6 @@ sudo apt update
 sudo apt install golang-go
 ```
 
-#### Install `antlr4`, `openjdk-21`, `clang`
-
-```
-sudo apt install antlr4
-sudo apt install openjdk-21-jdk
-sudo apt install clang
-```
-
 #### Install `llvm`
 
 ```
@@ -95,55 +40,24 @@ or
 
 ```
 sudo apt install llvm
-sudo apt install lld
 ```
 
 #### Install `riscv-tools`
 
 ```
-sudo apt update
-sudo apt upgrade
-sudo apt install autoconf automake autotools-dev curl python3 python3-pip libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake libglib2.0-dev libslirp-dev
-
-mkdir risc-v
-cd risc-v
-git clone https://github.com/riscv-collab/riscv-gnu-toolchain.git
-
-cd riscv-gnu-toolchain
-sudo mkdir /opt/riscv
-./configure --prefix=/opt/riscv
-sudo make linux
-
-echo 'export PATH="$PATH:/opt/riscv/bin"' >> ~/.bashrc
-
-source ~/.bashrc
-```
-
-or
-
-```
 sudo apt install gcc-riscv64-unknown-elf
 ```
 
-#### Install `spike`. ⚠️This is optional
+[You can use homebrew](https://github.com/riscv-software-src/homebrew-riscv)
 
 ```
-sudo apt install device-tree-compiler libboost-all-dev
-
-cd ~/risc-v
-git clone https://github.com/riscv-software-src/riscv-isa-sim.git
-
-cd riscv-isa-sim
-
-mkdir build
-cd build
-
-../configure --prefix=/opt/riscv
-make
-make install
+brew tap riscv-software-src/riscv
+brew install riscv-tools
 ```
 
-#### Build & Install compiler in the root folder
+or [you can build from source.](https://github.com/riscv-collab/riscv-gnu-toolchain)
+
+#### Build & Install CellScript compiler in the root folder
 
 ```
 make build
@@ -153,7 +67,7 @@ source install.sh
 ::::
 
 
-## How to compile cellscript program
+## Compile a cellscript program
 
 You can write your program in file with `.cell`. Here for example, we say `hello.cell`
 
