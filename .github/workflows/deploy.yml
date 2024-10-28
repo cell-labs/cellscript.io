@@ -22,9 +22,23 @@ jobs:
      - name: Insall dependencies
        run: npm install
      - name: Compile 
-       run: export CI=false && npm run build && tree ./site/dist -a && cp package.json site && cp -r .github site
-      
+       run: |
+        export CI=false && npm run build
+        tree ./site/dist -a
+        cp package.json site
+
+     - name: Setup Pages
+       uses: actions/configure-pages@v5
+     - name: Upload artifact
+       uses: actions/upload-pages-artifact@v3
+       with:
+          # Upload entire repository
+          path: ./site/dist
      - name: Deploy to GitHub Pages
+       id: deployment
+       uses: actions/deploy-pages@v4
+
+     - name: Push to gh-pages branch
        if: success()
        uses: crazy-max/ghaction-github-pages@v3
        with:
