@@ -22,14 +22,14 @@ jobs:
      - name: Insall dependencies
        run: npm install
      - name: Compile 
-       run: export CI=false && npm run build && tree ./site/dist -a
+       run: export CI=false && npm run build && tree ./site/dist -a && cp package.json site
       
      - name: Deploy to GitHub Pages
        if: success()
        uses: crazy-max/ghaction-github-pages@v3
        with:
           target_branch: gh-pages
-          build_dir: ./site/dist
+          build_dir: ./site
           fqdn: cellscript.io
        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
