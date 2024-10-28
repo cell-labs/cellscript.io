@@ -3,8 +3,10 @@ name: Deploy static content to Pages
 
 on:
   # Runs on pushes targeting the default branch
-  push:
-    branches: ["gh-pages"]
+  workflow_run:
+    workflows: ["Deploy to GitHub page"]
+    types:
+      - completed
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,6 +33,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: gh-pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
