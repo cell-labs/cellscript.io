@@ -22,7 +22,7 @@ jobs:
      - name: Insall dependencies
        run: npm install
      - name: Compile 
-       run: export CI=false && npm run build && tree ./site/dist -a && cp package.json site
+       run: export CI=false && npm run build && tree ./site/dist -a && cp package.json site && cp .github site
       
      - name: Deploy to GitHub Pages
        if: success()
