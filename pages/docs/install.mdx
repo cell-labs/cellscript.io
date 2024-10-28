@@ -1,0 +1,125 @@
+# Installations
+
+## Build from source
+
+You can build the Cell Script Compiler from source code right now!
+
+### How to build (MacOS) and Install
+
+```
+brew install go@1.22
+brew install llvm@18
+brew tap riscv-software-src/riscv
+brew install riscv-tools
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm@18/bin:$PATH"
+make build
+source install.sh
+```
+
+### How to build (Ubuntu)
+
+::::steps
+
+
+#### Install `golang 1.22`
+
+```
+sudo add-apt-repository ppa:longsleep/golang-backports
+sudo apt update
+sudo apt install golang-go
+```
+
+#### Install `llvm`
+
+```
+sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+```
+
+or
+
+```
+sudo apt install llvm
+```
+
+#### Install `riscv-tools`
+
+```
+sudo apt install gcc-riscv64-unknown-elf
+```
+
+[You can use homebrew](https://github.com/riscv-software-src/homebrew-riscv)
+
+```
+brew tap riscv-software-src/riscv
+brew install riscv-tools
+```
+
+or [you can build from source.](https://github.com/riscv-collab/riscv-gnu-toolchain)
+
+#### Build & Install CellScript compiler in the root folder
+
+```
+make build
+source install.sh
+```
+
+::::
+
+
+## Compile a cellscript program
+
+You can write your program in file with `.cell`. Here for example, we say `hello.cell`
+
+::::steps
+
+#### Compile `.cell` file
+```
+cell hello.cell
+```
+
+You will get the output file also known as elf file named `hello` in the root folder. Just run it `./hello`!
+
+#### Compile elf target
+
+To compile `elf`
+
+```
+cell -t riscv hello.cell
+```
+
+You will get the elf executable named `hello` in the root folder.
+
+#### To run `elf` file
+
+To run the elf file, we need `ckb-debugger` the default debugger for ckb programs.
+
+Run the following command to install `ckb-debugger`, suppose you already know what is cargo.
+
+```
+cargo install --git https://github.com/nervosnetwork/ckb-standalone-debugger ckb-debugger
+```
+
+Run below command to debug & run the `hello` program.
+
+```
+ckb-debugger --bin hello
+```
+
+::::
+
+## Usage of Cell Script Compiler
+
+Use `cell --help` to view the usage instructions.
+
+```
+Usage: cell [options] <filename>
+  -d, --debug           Emit debug information during compile time
+  -h, --help            Show help message
+  -O, --optimize        Enable clang optimization
+  -o, --output string   Output binary filename
+  -t, --target string   Compile to this target (default "native")
+  -v, --verbose         Emit verbose command during compiling
+```
+
+

@@ -1,0 +1,15 @@
+import{d as s,j as e}from"./index-BM2eiypE.js";const c=void 0;function i(n){const a={a:"a",code:"code",div:"div",h2:"h2",h3:"h3",h4:"h4",p:"p",pre:"pre",span:"span",...s(),...n.components};return e.jsxs(e.Fragment,{children:[e.jsxs(a.h2,{id:"package-blockchain",children:["package blockchain",e.jsx(a.a,{"aria-hidden":"true",tabIndex:"-1",href:"#package-blockchain",children:e.jsx(a.div,{"data-autolink-icon":!0})})]}),`
+`,e.jsxs(a.p,{children:["Structures of a ",e.jsx(a.a,{href:"https://docs.nervos.org/docs/tech-explanation/cell",children:"CKB Cell"}),"."]}),`
+`,e.jsx(a.p,{children:"Since everything is a collection of bytes, these structures just a wrapper of byte slice."}),`
+`,e.jsxs(a.h3,{id:"script",children:[e.jsx(a.a,{href:"https://docs.nervos.org/docs/tech-explanation/script",children:"Script"}),e.jsx(a.a,{"aria-hidden":"true",tabIndex:"-1",href:"#script",children:e.jsx(a.div,{"data-autolink-icon":!0})})]}),`
+`,e.jsx(a.pre,{className:"shiki shiki-themes github-light github-dark-dimmed",style:{backgroundColor:"#fff","--shiki-dark-bg":"#22272e",color:"#24292e","--shiki-dark":"#adbac7"},tabIndex:"0",children:e.jsxs(a.code,{children:[e.jsx(a.span,{className:"line",children:e.jsx(a.span,{children:"Script: {"})}),`
+`,e.jsx(a.span,{className:"line",children:e.jsx(a.span,{children:"  code_hash: HexString"})}),`
+`,e.jsx(a.span,{className:"line",children:e.jsx(a.span,{children:"  args: HexString"})}),`
+`,e.jsx(a.span,{className:"line",children:e.jsx(a.span,{children:'  hash_type: Uint8, there are 4 allowed values: {0: "data", 1: "type", 2: "data1", 3: "data2"}'})}),`
+`,e.jsx(a.span,{className:"line",children:e.jsx(a.span,{children:"}"})})]})}),`
+`,e.jsxs(a.h4,{id:"hash_type",children:[e.jsx(a.a,{href:"https://docs.nervos.org/docs/tech-explanation/hash-type",children:"hash_type"}),e.jsx(a.a,{"aria-hidden":"true",tabIndex:"-1",href:"#hash_type",children:e.jsx(a.div,{"data-autolink-icon":!0})})]}),`
+`,e.jsxs(a.h2,{id:"package-ckb",children:["package ckb",e.jsx(a.a,{"aria-hidden":"true",tabIndex:"-1",href:"#package-ckb",children:e.jsx(a.div,{"data-autolink-icon":!0})})]}),`
+`,e.jsxs(a.h3,{id:"loadscript",children:["loadScript",e.jsx(a.a,{"aria-hidden":"true",tabIndex:"-1",href:"#loadscript",children:e.jsx(a.div,{"data-autolink-icon":!0})})]}),`
+`,e.jsx(a.pre,{className:"shiki shiki-themes github-light github-dark-dimmed",style:{backgroundColor:"#fff","--shiki-dark-bg":"#22272e",color:"#24292e","--shiki-dark":"#adbac7"},tabIndex:"0",children:e.jsx(a.code,{children:e.jsx(a.span,{className:"line",children:e.jsx(a.span,{children:"func loadScript() blockchain.Script"})})})}),`
+`,e.jsxs(a.p,{children:["Load current running script, which could be a Lock Script or a Type Script. You can check it based on the ",e.jsx(a.a,{href:"#hash_type",children:"hash_type"})," field."]}),`
+`,e.jsxs(a.h2,{id:"binary-package",children:["binary package",e.jsx(a.a,{"aria-hidden":"true",tabIndex:"-1",href:"#binary-package",children:e.jsx(a.div,{"data-autolink-icon":!0})})]})]})}function t(n={}){const{wrapper:a}={...s(),...n.components};return a?e.jsx(a,{...n,children:e.jsx(i,{...n})}):i(n)}export{t as default,c as frontmatter};

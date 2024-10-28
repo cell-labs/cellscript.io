@@ -1,0 +1,5 @@
+import{d as i,j as e}from"./index-BM2eiypE.js";const c=void 0;function r(t){const n={a:"a",div:"div",h2:"h2",p:"p",...i(),...t.components};return e.jsxs(e.Fragment,{children:[e.jsxs(n.h2,{id:"cellscript",children:["CellScript",e.jsx(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#cellscript",children:e.jsx(n.div,{"data-autolink-icon":!0})})]}),`
+`,e.jsx(n.p,{children:"Cell Script is a new designed statically-typed programming language for smart contracts running on UTXO-based chain CKB."}),`
+`,e.jsx(n.p,{children:"By using Cell Script, any developer can start the jounery of CKB smart contracts in minutes."}),`
+`,e.jsxs(n.p,{children:["The Cell Script specification can be found ",e.jsx(n.a,{href:"https://github.com/cell-labs/cell-script/blob/main/SPEC.md",children:"here"})]}),`
+`,e.jsxs(n.p,{children:["More details about CKB, can be find ",e.jsx(n.a,{href:"https://www.nervos.org/ckbpage",children:"here"})]})]})}function a(t={}){const{wrapper:n}={...i(),...t.components};return n?e.jsx(n,{...t,children:e.jsx(r,{...t})}):r(t)}export{a as default,c as frontmatter};
