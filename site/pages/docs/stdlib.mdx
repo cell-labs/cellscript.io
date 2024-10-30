@@ -4,19 +4,41 @@ Structures of a [CKB Cell](https://docs.nervos.org/docs/tech-explanation/cell).
 
 Since everything is a collection of bytes, these structures just a wrapper of byte slice.
 
-### [Script](https://docs.nervos.org/docs/tech-explanation/script)
+### Types
+
+#### type [Script](https://docs.nervos.org/docs/tech-explanation/script)
 
 ```
-Script: {
-  code_hash: HexString
-  args: HexString
-  hash_type: Uint8, there are 4 allowed values: {0: "data", 1: "type", 2: "data1", 3: "data2"}
+type Script table {
+    inner []byte
 }
+
+func (s *Script) TotalSize() uint64 
+func (s *Script) FieldCount() uint64
+func (s *Script) Len() uint64
+func (s *Script) IsEmpty() bool
+func (s *Script) CountExtraFields()
+func (s *Script) HasExtraFields()
+func (s *Script) CodeHash() Byte32
+func (s *Script) HashType() Byte
+func (s *Script) Args() Bytes
 ```
 
-#### [hash_type](https://docs.nervos.org/docs/tech-explanation/hash-type)
+[hash_type](https://docs.nervos.org/docs/tech-explanation/hash-type)
 
+#### type Byte32
 
+```
+type Bytes table {
+	inner []byte
+}
+
+func (s *Bytes) TotalSize() uint64
+func (s *Bytes) Len() uint64
+func (s *Bytes) IsEmpty() bool
+func (s *Bytes) Get(index uint64) Byte
+func (s *Bytes) RawData() []byte
+```
 
 ## package ckb
 
