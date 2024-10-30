@@ -48,6 +48,10 @@ export default defineConfig({
     {
       text: 'Standard Library',
       link: '/docs/stdlib',
+    },
+    {
+      text: 'VSCode Extension',
+      link: '/docs/vscode-extension',
     }
   ],
   topNav: [
