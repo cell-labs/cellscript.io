@@ -5,20 +5,22 @@ import { version } from './package.json'
 export default defineConfig({
   title: 'Cell Script',
   description: 'Cell Script is a new designed statically-typed programming language for smart contracts running on UTXO-based chain CKB.',
+  baseUrl: 'https://cell-labs.github.io',
+  basePath: '/cellscript.io',
   editLink: {
     pattern: 'https://github.com/cell-labs/cellscript.io/edit/main/site/pages/:path',
     text: 'Suggest changes to this page',
   },
   iconUrl: {
-    light: '/cellscript-icon-light.svg',
-    dark: '/cellscript-icon-dark.svg',
+    light: './cellscript-icon-light.svg',
+    dark: './cellscript-icon-dark.svg',
   },
   logoUrl: {
-    light: '/cellscript-logo-light.svg',
-    dark: '/cellscript-logo-dark.svg',
+    light: './cellscript-logo-light.svg',
+    dark: './cellscript-logo-dark.svg',
   },
   ogImageUrl: {
-    '/': '/og.jpeg',
+    '/': './og.jpeg',
     '/docs': '',
   },
   rootDir: 'site',
