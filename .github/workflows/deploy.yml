@@ -29,7 +29,7 @@ jobs:
      - name: Setup Node
        uses: actions/setup-node@v2
        with:
-         node-version: '18.12.1'
+         node-version: '20.18.1'
 
      - name: Insall dependencies
        run: npm install
